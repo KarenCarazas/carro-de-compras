@@ -1,98 +1,132 @@
 <!DOCTYPE html>
-<html>
-<title>Curriculum Vitae</title>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
     <h1>
         <center>Curriculum Vitae Form</center>
     </h1>
+    <style>
+        .btn {
+            border-radius: 5px;
+            display: inline-block;
+            padding: 5px 15px;
+
+        }
+
+        .btn-silver {
+            color: white;
+            background-color: silver;
+        }
+
+        .btn-silver:hover {
+            background-color: silver
+        }
+
+        .btn-silver:active {
+            background-color: silver;
+        }
+body {
+            font-family: Arial;
+            background-color: silver;
+        }
+
+        form {
+            background-color: white;
+            color: black;
+            font-size: 15px;
+            padding: 40px;
+            margin: 25px auto;
+            width: 300px;
+        }
+
+        .field {
+            border: solid 1px silver;
+            padding: 10px;
+        }
+
+        .field:focus {
+            border-color: black;
+        }
+
+        .center-content {
+            text-align: center;
+        }
+    </style>
 </head>
-<form action="cv.html" method="post">
 
-    <div class="elem-group"> <label for="name">Nombres y Apellidos</label>
-        <br>
-        <input type="text" id="name" name="visitor_name" size='40' placeholder="Nombres y apellidos" required> </div>
-    <br>
+<body>
+    <form action="cvforms" method="post">
+        <p>Nombres y Apellidos:</p>
+        <input class="field" type="text" size="35" required> <br />
 
-    <div class="elem-group"> <label for="born">Fecha de nacimiento</label>
-        <br>
-        <input type="date" id="born" name="visitor_born" required> </div>
-    <br>
+        <p>Fecha de nacimiento:</p>
+        <input class="field" type="date" required> <br />
 
-    <div class="elem-group"> <label for="ocupation">Ocupación</label>
-        <br>
-        <input type="text" id="ocupation" name="visitor_ocupation" placeholder="Ocupacion" required></div>
-    <br>
+        <p>Ocupación:</p>
+        <input type="text" class="field" size="35"> <br />
 
-    <div class="elem-group"> <label for="number">Telefono</label>
-        <br>
-        <input type="tel" id="number" name="visitor_number" placeholder="Numero de telefono" required> </div>
-    <br>
+        <p>Teléfono:</p>
+        <input type="tel" class="field" size="35" required> <br />
 
-    <div class="elem-group"> <label for="mail">Correo electrónico</label>
-        <br>
-        <input type="email" id="mail" name="visitor_mail" size='25' placeholder="ejemplo@gmail.com" required> </div>
-    <br>
+        <p>Correo electrónico:</p>
+        <input type="email" class="field" size="35" required> <br />
 
-    <div class="elem-group"> <label for="nation">Nacionalidad</label>
-        <br>
-        <select id="nation" name='visitor_nation' required>
-        <option value="0">...</option>
-        <option value="1">Perú</option>
-        <option value="2">Chile</option>
-        <option value="3">Bolivia</option>
-        <option value="4">Argentina</option>
+        <p>Nacionalidad:</p>
+        <select class="field" required> <br />
+            <option value="0">...</option>
+            <option value="1">Perú</option>
+            <option value="2">Chile</option>
+            <option value="3">Bolivia</option>
+            <option value="4">Argentina</option>
         </select>
-    </div>
-    <br>
+        <br />
 
-    <div class="elem-group"> <label for="english">Nivel de inglés</label>
-        <required>
-            <br>
-            <input type="radio" name="bif" value="b" required> Básico
-            <input type="radio" name="bif" value="i" required> Intermedio
-            <input type="radio" name="bif" value="f" required> Fluido
-    </div>
-    <br>
+        <p>Nivel de inglés:</p>
+        <input type="radio" name="ingles" value="b"> Básico
+        <input type="radio" name="ingles" value="i"> Intermedio
+        <input type="radio" name="ingles" value="f"> Fluido
+        <br />
 
-    <div class="elem-group"> <label for="program">Lenguajes de programación</label>
-        <br>
-        <input type="radio" name="python" value="p" required> Python
-        <br>
-        <input type="radio" name="c++" value="c" required> C++
-        <br>
-        <input type="radio" name="javascript" value="j" required> JavaScript
-    </div>
-    <br>
+        <p>Lenguajes de programación:</p>
+        <input type="radio" name="leng" value="p"> Python
+        <br />
+        <input type="radio" name="leng" value="c"> C++
+        <br />
+        <input type="radio" name="leng" value="j"> Java
+        <br />
 
-    <div class="elem-group"> <label for="aptituds">Aptitudes</label>
-        <br>
-        <input list="aptituds" required>
-        <datalist id="aptituds">
-        <option value="Inteligencia emocional">
-        <option value="Creatividad">
-        <option value="Trabajo en equipo">
-    </datalist>
-    </div>
-    <br>
+        <p>Aptitudes:</p>
+        <input class="field" list="aptitudes" id="aps" name="aps" required>
+        <datalist id="aptitudes">
+            <option value="Inteligencia emocional">
+            <option value="Espíritu crítico">
+            <option value="Trabajo en equipo">
+            <option value="Capacidad analítica">
+            <option value="Habilidades físicas">
+        </datalist>
+        <br />
 
-    <div class="elem-group"> <label for="ability">Habilidades</label>
+        <p>Habilidades:</p>
+        <input type="checkbox" name="casilla" value="l">Liderazgo
         <br>
-        <input type="checkbox" name="casilla" required>Liderazgo
+        <input type="checkbox" name="casilla" value="e">Ética de trabajo
         <br>
-        <input type="checkbox" name="casilla" required>Ética de trabajo
+        <input type="checkbox" name="casilla" value="c">Capacidad de análisis
         <br>
-        <input type="checkbox" name="casilla" required>Capacidad de análisis
+        <input type="checkbox" name="casilla" value="i">Iniciativa
         <br>
-        <input type="checkbox" name="casilla" required>Iniciativa
-        <br>
-        <input type="checkbox" name="casilla" required>Comunicación verbal
-    </div>
-    <br>
+        <input type="checkbox" name="casilla" value="v">Comunicación verbal
 
-    <div class="elem-group"> <label for="message">Perfil</label>
-        <br>
-        <textarea id="message" name="visitor_message" placeholder="Escribe tu mensaje aquí." required></textarea> </div>
-    <br>
+        <p>Perfil:</p>
+        <textarea class="field" cols="35"></textarea> <br />
+
+        <p class="center-content">
+            <input type="submit" class="btn btn-silver" value="Enviar Datos">
+        </p>
+
+    </form>
+</body>
 
 </html>
