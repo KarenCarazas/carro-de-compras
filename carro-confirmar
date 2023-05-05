@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles</title>
+    <style>
+    
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/**/
+}
+body{
+    background-color: rgb(221, 221, 221);/*Fondo Iniciar sesión*/
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;/**/
+    margin: 0 auto;
+}
+.container{ /* Caja contenedora */
+    background-color: #fff;
+    border-radius: 10px;
+    width: 500px;
+    
+    max-width: 100%;
+    min-height: 480px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 14px 28px rgb(0, 0, 0, .25),
+                0px 14px 10px rgb(0, 0, 0, .22);
+}
+.box-container{ /*Division de contenido 1 */
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    
+}
+.confirmar{ /*Division de contenido 2 */
+    left: 0;
+    width: 100%;
+    
+    
+}
+ .pedido{
+    background-color: #FFFFFF;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+.field {
+            border: solid 1px silver;
+            padding: 10px;
+        }
+        button{
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: black;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 10px;
+    
+}
+ h1 {
+            font-size: 25px;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" id="confirmar">
+        <div class="box-container confirmar">
+            <div class="pedido">
+            <h1>Nº de pedido</h1></br>
+                            <input class='field' id="randomNumberInput" size="35"></br>
+
+                            <h1>Destinatario</h1></br>
+                            <input class="field" type="text" size="35"> <br />
+                            
+                            <h1>Direccion</h1></br>
+                            <input class="field" type="text" size="35"> <br />
+                            <button>confirmar</button>
+
+
+           </div>
+        </div>
+
+       
+</body>
+</html>
