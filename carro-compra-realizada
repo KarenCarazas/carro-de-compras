@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra realizada</title>
+    <style>
+    
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/**/
+}
+body{
+    background-color: rgb(221, 221, 221);/*Fondo Iniciar sesión*/
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;/**/
+    margin: 0 auto;
+}
+.container{ /* Caja contenedora */
+    background-color: #fff;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 100%;
+    min-height: 480px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 14px 28px rgb(0, 0, 0, .25),
+                0px 14px 10px rgb(0, 0, 0, .22);
+}
+.box-container{ /*Division de contenido 1 */
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    
+}
+.compra-hecha{ /*Division de contenido 2 */
+    left: 0;
+    width: 100%;
+    
+    
+}
+ .pedido{
+    background-color: #FFFFFF;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+h1 {
+            font-weight: bold;
+            margin: 15px;
+
+
+        }
+
+.check{
+            width: 100px;
+            height: 100px;
+            margin: 25px auto;
+
+}
+
+    </style>
+</head>
+<body>
+    <div class="container" id="comprahecha">
+        <div class="box-container compra-hecha">
+            <div class="pedido">
+                <h1>Tu pedido ha sido procesado correctamente.</h1></br>
+               <h4>Te enviaremos un correo de confirmacion.</h4>
+               <img class="check" src="https://www.bing.com/images/blob?bcid=Tl.RsKbDDI4FIrJkytmV5Ay5Iq4S......k">
+           </div>
+        </div>
+
+       
+</body>
+</html>
