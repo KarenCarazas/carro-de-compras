@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carro de compras</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+        body {
+            background-color: rgb(221, 221, 221);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /*subtotal de compra*/
+        .subtotal {
+            display: flex;
+            width: 600px;
+            height: 80px;
+            margin: 25px auto;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .texto {
+            margin: 30px auto;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        .table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            box-shadow: 0px 14px 28px rgb(0, 0, 0, .25),
+                0px 14px 10px rgb(0, 0, 0, .22);
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: white;
+        }
+
+        button {
+            border-radius: 20px;
+            border: 1px solid #000000;
+            background-color: #000000;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 10px;
+        }
+
+        h1 {
+            font-weight: bold;
+            margin: 15px;
+        }
+    </style>
+
+    <script>
+        function updateTotal() {
+            // Get the table rows
+            var rows = document.querySelectorAll("table tr");
+
+            // Initialize the total cost
+            var subtotal = 0;
+
+            // Loop through each row (skipping the first row, which contains the headers)
+            for (var i = 1; i < rows.length; i++) {
+                // Get the cells in the current row
+                var cells = rows[i].cells;
+
+                // Get the price and quantity from the cells
+                var price = parseFloat(cells[1].textContent.replace("$", ""));
+                var quantity = parseInt(cells[2].querySelector("input").value);
+
+                // Calculate the total cost for this item
+                var itemTotal = price * quantity;
+
+                // Update the total cost for this item in the table
+                cells[3].textContent = "$" + itemTotal.toFixed(2);
+
+                // Add the total cost for this item to the overall total cost
+                subtotal += itemTotal;
+            }
+
+            // Update the total cost at the bottom of the page
+            document.querySelector("#subtotal").textContent = "Subtotal: $" + subtotal.toFixed(2);
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>
+        <center>Carro de compras<center>
+    </h1>
+
+    <section>
+        <table class='table'>
+            <tr>
+                <th class="texto">Tus productos</th>
+                <th class="texto">Precio</th>
+                <th class="texto">Cantidad</th>
+                <th class="texto">Subtotal</th>
+            </tr>
+
+            <tr>
+                <td class="texto">
+                    <img
+                        src="https://falabella.scene7.com/is/image/FalabellaPE/17659331_1?wid=120&hei=120&qlt=70&fmt=webp"></br>
+                    SONY</br>
+                    Código: 17659331 </br>
+                    Audífonos inalámbricos con noise cancelling WH-1000XM4 </br>
+                    Color: Negro</br>
+                </td>
+                <td class="texto">$80.00</td>
+                <td class="texto"><input type="number" value="1" onchange="updateTotal()"></td>
+                <td class="texto">$80.00</td>
+            </tr>
+            <tr>
+                <td class="texto"></br>
+                    <img
+                        src="https://falabella.scene7.com/is/image/FalabellaPE/18420282?wid=120&hei=120&qlt=70&fmt=webp"></br>
+                    SONY</br>
+                    Código: 18420282</br>
+                    Audífonos True Wireless Sony con Bluetooth WF-C500 Negro</br>
+                    Color: Verde</br>
+                </td>
+                <td class="texto">$25.00</td>
+                <td class="texto"><input type="number" value="1" onchange="updateTotal()"></td>
+                <td class="texto">$25.00</td>
+            </tr>
+
+        </table>
+    </section>
+    </br>
+    <section class="subtotal">
+        <p class='texto' id="subtotal">Subtotal: $30.00</p>
+    </section>
+
+    <div class="texto">
+        <button onclick="continuar()">Continuar</button>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
